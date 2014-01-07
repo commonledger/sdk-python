@@ -41,3 +41,37 @@ class Accounts():
 
 		return response
 
+	# Updates an existing account in the chart of accounts
+	# '/core.account/update/:account_id' POST
+	#
+	# organisation_id - The organisation the account belongs to
+	# account_number - The account code
+	# name - The account name
+	# classification - The account classification
+	# type - The type of classification for the account
+	# tax - The tax code that applies to the account
+	# currency - The currency code that applies to the account
+	def update(self, organisation_id, account_number, name, classification, type, tax, currency, options = {}):
+		body = options['body'] if 'body' in options else {}
+		body['organisation_id'] = organisation_id
+		body['account_number'] = account_number
+		body['name'] = name
+		body['classification'] = classification
+		body['type'] = type
+		body['tax'] = tax
+		body['currency'] = currency
+
+		response = self.client.post('/core.account/update/' + self.account_id + '', body, options)
+
+		return response
+
+	# Deletes an account from the chart of accounts
+	# '/core.account/delete/:account_id' GET
+	#
+	def delete(self, options = {}):
+		body = options['query'] if 'query' in options else {}
+
+		response = self.client.get('/core.account/delete/' + self.account_id + '', body, options)
+
+		return response
+
