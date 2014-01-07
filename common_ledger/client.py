@@ -1,6 +1,7 @@
 from .http_client import HttpClient
 
 # Assign all the api classes
+from .api.auth import Auth
 from .api.accounts import Accounts
 from .api.tax import Tax
 from .api.journals import Journals
@@ -9,6 +10,11 @@ class Client():
 
 	def __init__(self, auth = {}, options = {}):
 		self.http_client = HttpClient(auth, options)
+
+	# Using OAuth 2.0 to connect to Common Ledger
+	#
+	def auth(self):
+		return Auth(self.http_client)
 
 	# Manages data relating to the Chart of Accounts
 	#

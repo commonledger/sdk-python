@@ -10,8 +10,8 @@ setup(
 	name='commonledger-sdk',
 	version='0.0.1',
 	description='Official CommonLedger API library client for python',
-	author='Patrick Hindmarsh',
-	author_email='patrick@hindmar.sh',
+	author='Common Ledger',
+	author_email='api@commonledger.com',
 	url='https://commonledger.com',
 	license='MIT',
 	install_requires=[
