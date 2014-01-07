@@ -7,7 +7,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-	name='common-ledger-sdk',
+	name='commonledger-sdk',
 	version='0.0.1',
 	description='Official CommonLedger API library client for python',
 	author='Patrick Hindmarsh',
